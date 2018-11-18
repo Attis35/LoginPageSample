@@ -13,6 +13,7 @@
 		0B9E2E57219DD94700D07082 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9E2E56219DD94700D07082 /* ViewController.swift */; };
 		0B9E2E5C219DD94900D07082 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B9E2E5B219DD94900D07082 /* Assets.xcassets */; };
 		0B9E2E5F219DD94900D07082 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B9E2E5D219DD94900D07082 /* LaunchScreen.storyboard */; };
+		0BAB529321A13F800012800B /* CustomUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BAB529221A13F800012800B /* CustomUITextField.swift */; };
 		0BC00BD7219EC3B6003B5882 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC00BD6219EC3B6003B5882 /* Colors.swift */; };
 		0BF6B30221A08FDA00647C48 /* EmailValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF6B30121A08FDA00647C48 /* EmailValidation.swift */; };
 		0BF6B30421A0910C00647C48 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF6B30321A0910C00647C48 /* Alert.swift */; };
@@ -28,6 +29,7 @@
 		0B9E2E5B219DD94900D07082 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0B9E2E5E219DD94900D07082 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0B9E2E60219DD94900D07082 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0BAB529221A13F800012800B /* CustomUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUITextField.swift; sourceTree = "<group>"; };
 		0BC00BD6219EC3B6003B5882 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		0BF6B30121A08FDA00647C48 /* EmailValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidation.swift; sourceTree = "<group>"; };
 		0BF6B30321A0910C00647C48 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				0BC00BD6219EC3B6003B5882 /* Colors.swift */,
 				0B619680219FF01F001D09C4 /* Fonts.swift */,
 				0B619682219FFFFB001D09C4 /* Text.swift */,
+				0BAB529221A13F800012800B /* CustomUITextField.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -174,6 +177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0BF6B30621A09EC800647C48 /* HideKeyboard.swift in Sources */,
+				0BAB529321A13F800012800B /* CustomUITextField.swift in Sources */,
 				0B619681219FF01F001D09C4 /* Fonts.swift in Sources */,
 				0B619683219FFFFB001D09C4 /* Text.swift in Sources */,
 				0B9E2E57219DD94700D07082 /* ViewController.swift in Sources */,

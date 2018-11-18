@@ -11,16 +11,13 @@ import UIKit
 class ViewController: UIViewController {
     
     // Outlets programmatically
-    let emailTextField = UITextField()
-    let passwordTextField = UITextField()
+    let emailTextField = CustomUITextField()
+    let passwordTextField = CustomUITextField()
     let btn = UIButton()
+    let imageContainer = UIImageView(image: UIImage(named: "mainImage"))
     
-    enum LoginError: Error {
-        case incompleteForm
-        case invalidEmail
-        case invalidPasswordLength
-    }
-
+    // Image properties
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,6 +25,7 @@ class ViewController: UIViewController {
         self.applyGradientFilter(topColor: COLOR_GRADIENTBG_TOP, bottomColor: COLOR_GRADIENTBG_BOTTOM)
         
         // Setup Views
+        setupImageView()
         setupEmailTextField()
         setupPasswordTextField()
         setupLoginButton()
@@ -36,13 +34,23 @@ class ViewController: UIViewController {
         self.hideKeyboardWhenTappedAround()
         
         
+        
+        
     }
- 
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-    
-    
+
+    func setupImageView() {
+        self.view.addSubview(imageContainer)
+        imageContainer.translatesAutoresizingMaskIntoConstraints = false
+        imageContainer.topAnchor.constraint(equalTo: view.topAnchor, constant: 40).isActive = true
+        imageContainer.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        imageContainer.widthAnchor.constraint(equalToConstant: 180).isActive = true
+        imageContainer.heightAnchor.constraint(equalToConstant: 180).isActive = true
+        imageContainer.backgroundColor = .white
+        imageContainer.layer.cornerRadius = 90
+        imageContainer.layer.borderWidth = 4
+        imageContainer.layer.borderColor = UIColor.white.cgColor
+        imageContainer.layer.masksToBounds = true
+        
     }
 
     func setupEmailTextField() {
@@ -50,15 +58,11 @@ class ViewController: UIViewController {
         emailTextField.translatesAutoresizingMaskIntoConstraints = false
         emailTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40).isActive = true
         emailTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40).isActive = true
-        emailTextField.topAnchor.constraint(equalTo: view.topAnchor, constant: 100).isActive = true
+        emailTextField.topAnchor.constraint(equalTo: imageContainer.bottomAnchor, constant: 20).isActive = true
         emailTextField.heightAnchor.constraint(equalToConstant: 60).isActive = true
-        emailTextField.backgroundColor = COLOR_TEXTFIELD
-        emailTextField.layer.cornerRadius = 30
         emailTextField.text = TEXTFIELD_EMAIL_TEXT
-        emailTextField.textColor = .white
-        emailTextField.textAlignment = .center
-        emailTextField.font = BASIC_FONT
-        emailTextField.clearsOnBeginEditing = true
+        emailTextField.keyboardType = .emailAddress
+        
     }
     
     func setupPasswordTextField() {
@@ -68,14 +72,8 @@ class ViewController: UIViewController {
         passwordTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40).isActive = true
         passwordTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 30).isActive = true
         passwordTextField.heightAnchor.constraint(equalToConstant: 60).isActive = true
-        passwordTextField.backgroundColor = COLOR_TEXTFIELD
-        passwordTextField.layer.cornerRadius = 30
         passwordTextField.text = TEXTFIELD_PASSWORD_TEXT
-        passwordTextField.textColor = .white
-        passwordTextField.textAlignment = .center
-        passwordTextField.font = BASIC_FONT
         passwordTextField.isSecureTextEntry = true
-        passwordTextField.clearsOnBeginEditing = true
     }
 
 
@@ -94,15 +92,17 @@ class ViewController: UIViewController {
         btn.addTarget(self, action: #selector(loginButtonTapped(_:)), for: .touchUpInside)
     }
     
+    
+    func animateIn() {
+        UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseInOut, animations: {
+            self.imageContainer.widthAnchor.constraint(equalToConstant: 90).isActive = true
+            self.imageContainer.heightAnchor.constraint(equalToConstant: 90).isActive = true
+            self.imageContainer.layer.cornerRadius = 45
+        })
+    }
+    
+    
     @objc func loginButtonTapped(_ sender: UIButton) {
-        // TODO: Validation required
-        
-        guard let email = emailTextField.text, let password = passwordTextField.text else {
-            return
-        }
-        
-        print(email)
-        print(password)
         
     }
 
